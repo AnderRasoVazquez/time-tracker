@@ -9,6 +9,28 @@ gi.require_version('Notify', '0.7')
 from gi.repository import Gtk, Notify, Gio
 from config import TrackerConfig
 
+MENU_XML = """
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <menu id="app-menu">
+    <section>
+        <item>
+            <attribute name="label">About</attribute>
+            <attribute name="action">app.about</attribute>
+        </item>
+        <item>
+            <attribute name="label">Preferences</attribute>
+            <attribute name="action">app.quit</attribute>
+        </item>
+        <item>
+            <attribute name="label">Quit</attribute>
+            <attribute name="action">app.quit</attribute>
+        </item>
+    </section>
+  </menu>
+</interface>
+"""
+
 
 class TrackerWindow(Gtk.Window):
     """Application's main window."""
@@ -33,14 +55,25 @@ class TrackerWindow(Gtk.Window):
 
         self.set_titlebar(self.hb)
 
-        self.button_edit = Gtk.Button()
-        self.button_edit.set_tooltip_text("Open CSV file with your default editor")
-        icon = Gio.ThemedIcon(name="text-editor")
-        # icon = Gio.ThemedIcon(name="open-menu-symbolic")
+        self.button_edit = Gtk.MenuButton()
+        self.button_edit.set_tooltip_text("Open menu")
+        icon = Gio.ThemedIcon(name="open-menu")
         image = Gtk.Image.new_from_gicon(icon, Gtk.IconSize.BUTTON)
         self.button_edit.add(image)
-        self.button_edit.connect("clicked", self._on_button_edit_clicked)
+        # self.button_edit.connect("clicked", self._on_button_edit_clicked)
+
         self.hb.pack_end(self.button_edit)
+
+
+
+
+        builder = Gtk.Builder.new_from_string(MENU_XML, -1)
+
+        menu = builder.get_object("app-menu")
+
+        popover = Gtk.Popover.new_from_model(self.button_edit, menu)
+
+        self.button_edit.set_popover(popover)
 
         if self._config.darkmode:
             settings = Gtk.Settings.get_default()
@@ -69,9 +102,9 @@ class TrackerWindow(Gtk.Window):
 
         self.box = Gtk.Box(spacing=6)
 
-        self.label_hours = Gtk.Label("Hours worked")
+        self.label_hours = Gtk.Label("Minutes worked")
 
-        adjustment = Gtk.Adjustment(0, 0, 100, 1, 10, 0)
+        adjustment = Gtk.Adjustment(0, 0, 24*60, 15, 0, 0)
         self.spinbutton_hours = Gtk.SpinButton()
         self.spinbutton_hours.set_adjustment(adjustment)
 
@@ -89,6 +122,28 @@ class TrackerWindow(Gtk.Window):
         self.grid.attach(self.button_save, 0, 3, 2, 1)
 
         self.show_all()
+
+    def do_startup(self):
+        print("do_startup")
+        Gtk.Application.do_startup(self)
+
+        action = Gio.SimpleAction.new("about", None)
+        action.connect("activate", self.on_about)
+        self.add_action(action)
+
+        action = Gio.SimpleAction.new("quit", None)
+        action.connect("activate", self.on_quit)
+        self.add_action(action)
+
+    def do_activate(self):
+        print("do_activate")
+        # We only allow a single window and raise any existing ones
+        # if not self.window:
+        #     # Windows are associated with the application
+        #     # when the last one is closed the application shuts down
+        #     self.window = AppWindow(application=self, title="Main Window")
+        #
+        # self.window.present()
 
     def _on_button_edit_clicked(self, widget):
         filepath = self._config.csv_path
@@ -127,7 +182,7 @@ class TrackerWindow(Gtk.Window):
         """Save a new entry to the csv."""
         # TODO create a csv manager
         with open(self._config.csv_path, "a") as f:
-            line = "{},{},{},{},{}\n".format(year, month, day, activity, hours)
+            line = "{}-{}-{},{},{}\n".format(year, month, day, activity, hours)
             f.write(line)
             print("CSV file updated: ", line)
             self._notify("Entry saved succesfully", "PATH: " + self._config.csv_path)
