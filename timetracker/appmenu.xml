@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+    <menu id="app-menu">
+        <section>
+            <item>
+                <attribute name="label">Edit CSV file</attribute>
+                <attribute name="action">app.edit_csv</attribute>
+            </item>
+            <item>
+                <attribute name="label">Open data analizer</attribute>
+                <attribute name="action">app.show_data</attribute>
+            </item>
+        </section>
+        <section>
+            <item>
+                <attribute name="label">Settings</attribute>
+                <attribute name="action">app.settings</attribute>
+            </item>
+        </section>
+        <section>
+            <item>
+                <attribute name="label">About</attribute>
+                <attribute name="action">app.about</attribute>
+            </item>
+            <item>
+                <attribute name="label">Quit</attribute>
+                <attribute name="action">app.quit</attribute>
+            </item>
+        </section>
+    </menu>
+</interface>
