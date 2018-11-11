@@ -1,13 +1,8 @@
-import gi
-gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk
-from ui.window import TrackerWindow
+import sys
+from application import Application
 
+if __name__ == "__main__":
+    app = Application()
+    app.run(sys.argv)
 
-def main():
-    TrackerWindow()
-    Gtk.main()
-
-
-if __name__ == '__main__':
-    main()
+# TODO: gettext https://phraseapp.com/blog/posts/translate-python-gnu-gettext/
