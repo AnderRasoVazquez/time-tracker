@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+    <schema id="com.github.anderrasovazquez.timetracker" path="/com/github/anderrasovazquez/timetracker/">
+        <key type="b" name="darkmode">
+            <default>true</default>
+            <summary>Use dark mode if available.</summary>
+            <description>If enabled the application will use darkmode, if disabled it will use default mode.</description>
+        </key>
+        <key name="activities" type="as">
+            <default>["development", "testing"]</default>
+            <summary>Activity list</summary>
+            <description>Here are stored the columns of the CSV file corresponding to the activities.</description>
+        </key>
+        <key name="csv-path" type="s">
+            <default>"~/.timetracker/data.csv"</default>
+            <summary>CSV file path.</summary>
+            <description>The application will store activity data in this file.</description>
+        </key>
+        <key name="window-position" type="ai">
+            <default>[]</default>
+            <summary>Window position</summary>
+            <description>Most recent window position (x, y)</description>
+        </key>
+    </schema>
+</schemalist>

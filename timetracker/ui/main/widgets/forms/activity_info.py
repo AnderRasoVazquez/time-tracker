@@ -16,13 +16,8 @@ class ActivityGrid(Gtk.Grid):
         self.set_row_spacing(10)
         self.set_border_width(10)
 
-        activity_list = ["Choose an activity"] + activities
         self.combo_activity = Gtk.ComboBoxText()
-
-        for item in activity_list:
-            self.combo_activity.append_text(item)
-
-        self.combo_activity.set_active(0)
+        self._set_activities(activities)
         self.combo_activity.connect("changed", self._on_form_updated)
 
         # create a new calendar
@@ -60,7 +55,7 @@ class ActivityGrid(Gtk.Grid):
         self.infobar = Gtk.InfoBar()
         self.infobar.set_message_type(Gtk.MessageType.INFO)
         self.infobar.get_content_area().add(Gtk.Label("New entry saved"))
-        self.infobar.set_show_close_button(True)
+        # self.infobar.set_show_close_button(True)
         self.infobar.connect("response", self._on_infobar_response)
         self.attach(self.infobar, 0, 4, 2, 1)
 
@@ -72,6 +67,19 @@ class ActivityGrid(Gtk.Grid):
         self.attach(self.infobar_error, 0, 5, 2, 1)
 
         self.infobar.hide()
+
+    def update_values(self):
+        self.combo_activity.remove_all()
+        t = TrackerConfig()
+        activities = t.get_activities()
+        self._set_activities(activities)
+
+    def _set_activities(self, activities):
+        activity_list = ["Choose an activity"] + activities
+        for item in activity_list:
+            self.combo_activity.append_text(item)
+        self.combo_activity.set_active(0)
+
 
     def _on_infobar_response(self, infobar, respose_id):
         self.infobar.hide()
@@ -101,7 +109,7 @@ class ActivityGrid(Gtk.Grid):
 
     def _save_entry(self, year, month, day, activity, hours):
         """Save a new entry to the csv."""
-        csv_path = TrackerConfig().csv_path
+        csv_path = TrackerConfig().get_csv_path()
         if CSVManager().save_entry(csv_path, year, month, day, activity, hours):
             self.button_save.hide()
             self.infobar.show()

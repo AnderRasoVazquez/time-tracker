@@ -7,11 +7,13 @@ gi.require_version('Notify', '0.7')
 from gi.repository import Gtk, Gio
 from ui.main.window import AppWindow
 from appconfig import TrackerConfig
+from ui.settings.window import SettingsWindow
 
 
 class Application(Gtk.Application):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, application_id="com.github.anderrasovazquez.timetracker", **kwargs)
+        self.config = TrackerConfig()
         self.window = None
 
     def do_startup(self):
@@ -82,11 +84,15 @@ class Application(Gtk.Application):
         self.quit()
 
     def on_edit_csv(self, action, param):
-        subprocess.call(["xdg-open", TrackerConfig().csv_path])
+        subprocess.call(["xdg-open", TrackerConfig().get_csv_path()])
 
     def on_settings(self, action, param):
-        print("settings clicked")
+        settings_window = SettingsWindow(self.window)
+        settings_window.connect("destroy", self.window.update_values)
+
+    def update_values(self, widget):
+        self.window.update_values()
 
     def on_show_data(self, action, param):
-        print("show data clicked")
+        print("show data clicked - not implemented yet")
 
