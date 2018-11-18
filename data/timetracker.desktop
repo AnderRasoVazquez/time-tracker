@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name[es_ES]=TimeTracker
+Comment[es_ES]=Track time
+Icon=applications-development
+Exec=/usr/bin/python3 timetracker/__main__.py
+Terminal=false
+X-GNOME-UsesNotifications=true
+Categories=GTK;Utility;
