@@ -16,7 +16,7 @@ class CSVManager(object):
 
         if not os.path.exists(csv_path):
             with open(csv_path, "w") as f:
-                f.write("date,activity,hours\n")
+                f.write("date,activity,time\n")
                 print("Created: " + csv_path)
 
     def save_entry(self, csv_path, year, month, day, activity, hours):
