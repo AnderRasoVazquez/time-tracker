@@ -8,6 +8,7 @@ from gi.repository import Gtk, Gio
 from ui.main.window import AppWindow
 from appconfig import TrackerConfig
 from ui.settings.window import SettingsWindow
+from ui.analyzer.window import AnalyzerWindow
 
 
 class Application(Gtk.Application):
@@ -94,5 +95,5 @@ class Application(Gtk.Application):
         self.window.update_values()
 
     def on_show_data(self, action, param):
-        print("show data clicked - not implemented yet")
+        AnalyzerWindow()
 
