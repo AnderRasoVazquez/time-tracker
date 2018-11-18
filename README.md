@@ -19,7 +19,7 @@ A simple time tracker built with Python3 and love.
 
 ## How to run
 
-### Method 1: Using Python3
+### Method 1: Using the terminal
 
 From your terminal:
 
@@ -27,7 +27,5 @@ From your terminal:
 
 ### Method 2 (Linux) Use desktop file
 
-If your file manager allows it click on `timetracker.desktop`.
-
-If you want to add TimeTracker to your applications menu change the `exec` line of the `.desktop` file and copy it to `~/.local/share/applications`.
+If you want to add TimeTracker to your applications menu change the `exec` line of the `data/timetracker.desktop` file and copy it to `~/.local/share/applications`.
 
