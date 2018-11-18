@@ -28,15 +28,17 @@ class ActivityGrid(Gtk.Grid):
 
         self.box = Gtk.Box(spacing=6)
 
-        self.label_hours = Gtk.Label("Minutes worked")
+        self.label_time = Gtk.Label(_("Time worked"))
+        self.label_time.set_tooltip_text(_("Minutes, hours, days... What you prefer."))
 
-        adjustment = Gtk.Adjustment(0, 0, 24*60, 15, 0, 0)
-        self.spinbutton_hours = Gtk.SpinButton()
-        self.spinbutton_hours.set_adjustment(adjustment)
-        self.spinbutton_hours.connect("changed", self._on_form_updated)
+        # TODO get time increase
+        adjustment = Gtk.Adjustment(0, 0, 24*60, 1, 0, 0)
+        self.spinbutton_time = Gtk.SpinButton()
+        self.spinbutton_time.set_adjustment(adjustment)
+        self.spinbutton_time.connect("changed", self._on_form_updated)
 
-        self.box.pack_start(self.label_hours, True, True, 0)
-        self.box.pack_end(self.spinbutton_hours, True, True, 0)
+        self.box.pack_start(self.label_time, True, True, 0)
+        self.box.pack_end(self.spinbutton_time, True, True, 0)
 
         self.button_save = Gtk.Button(label="Save entry")
         self.button_save.set_always_show_image(True)
@@ -88,8 +90,8 @@ class ActivityGrid(Gtk.Grid):
 
     def _on_form_updated(self, widget):
         activity_id = self.combo_activity.get_active()
-        hours_worked = self.spinbutton_hours.get_value()
-        if activity_id != 0 and hours_worked > 0:
+        time_worked = self.spinbutton_time.get_value()
+        if activity_id != 0 and time_worked > 0:
             self.button_save.set_sensitive(True)
         else:
             self.button_save.set_sensitive(False)
@@ -102,18 +104,18 @@ class ActivityGrid(Gtk.Grid):
         month = date.month + 1  # months start at 0 in Gtk.Calendar
         day = date.day
         activity_id = self.combo_activity.get_active()
-        hours_worked = self.spinbutton_hours.get_value()
+        time_worked = self.spinbutton_time.get_value()
         activity_text = self.combo_activity.get_active_text()
 
-        self._save_entry(year, month, day, activity_text, hours_worked)
+        self._save_entry(year, month, day, activity_text, time_worked)
 
-    def _save_entry(self, year, month, day, activity, hours):
+    def _save_entry(self, year, month, day, activity, time):
         """Save a new entry to the csv."""
         csv_path = TrackerConfig().get_csv_path()
-        if CSVManager().save_entry(csv_path, year, month, day, activity, hours):
+        if CSVManager().save_entry(csv_path, year, month, day, activity, time):
             self.button_save.hide()
             self.infobar.show()
-            GLib.timeout_add(3000, self._on_timeout, None)
+            GLib.timeout_add(1500, self._on_timeout, None)
         else:
             self.button_save.hide()
             self.infobar_error.show()
