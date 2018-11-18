@@ -2,10 +2,10 @@ import gi
 
 gi.require_version('Gtk', '3.0')
 
-from gi.repository import Gtk, GLib, Gio
+from gi.repository import Gtk, Gio
 from appconfig import TrackerConfig
-from ui.main.widgets.header.headerbar import HeaderBar
-from ui.main.widgets.forms.activity_info import ActivityGrid
+from ui.main.headerbar import HeaderBar
+from ui.main.activity_info import ActivityGrid
 
 
 class AppWindow(Gtk.ApplicationWindow):
@@ -14,9 +14,6 @@ class AppWindow(Gtk.ApplicationWindow):
         super().__init__(*args, **kwargs)
 
         self._config = TrackerConfig()
-
-        settings = Gio.Settings('com.github.anderrasovazquez.timetracker')
-        settings.connect("changed::darkmode", self._on_darkmode_changed, self)
 
         self.set_resizable(False)
 
@@ -40,7 +37,3 @@ class AppWindow(Gtk.ApplicationWindow):
         print(widget.entry_activities.get_text())
         self.grid.update_values()
 
-    def _on_darkmode_changed(self, settings, key, check_button):
-        # TODO no va con settings, no lo llama si no es self.settings
-        print(settings.get_boolean("darkmode"))
-        print(self.settings.get_boolean("darkmode"))

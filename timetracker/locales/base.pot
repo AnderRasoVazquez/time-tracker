@@ -1,0 +1,157 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2018-11-18 00:02+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: ./ui/analyzer/window.py:35
+msgid "Data Analyzer"
+msgstr ""
+
+#: ./ui/analyzer/window.py:36
+msgid "Learn everything about your data"
+msgstr ""
+
+#: ./ui/analyzer/window.py:61
+msgid "Load DataFrame"
+msgstr ""
+
+#: ./ui/analyzer/window.py:62
+msgid "Help"
+msgstr ""
+
+#: ./ui/analyzer/window.py:65
+msgid "Daily"
+msgstr ""
+
+#: ./ui/analyzer/window.py:66
+msgid "Weekly"
+msgstr ""
+
+#: ./ui/analyzer/window.py:67
+msgid "Monthly"
+msgstr ""
+
+#: ./ui/analyzer/window.py:68
+msgid "Yearly"
+msgstr ""
+
+#: ./ui/analyzer/window.py:71
+msgid "Activity hour count"
+msgstr ""
+
+#: ./ui/analyzer/window.py:72
+msgid "Real VS Expected hour count"
+msgstr ""
+
+#: ./ui/analyzer/window.py:75
+msgid "Heatmap"
+msgstr ""
+
+#: ./ui/analyzer/window.py:76
+msgid "Bars"
+msgstr ""
+
+#: ./ui/analyzer/window.py:79
+msgid "Show full report"
+msgstr ""
+
+#: ./ui/analyzer/window.py:82 ./ui/main/headerbar.py:38
+msgid "Quit"
+msgstr ""
+
+#: ./ui/analyzer/window.py:85
+msgid "Terminal"
+msgstr ""
+
+#: ./ui/analyzer/window.py:86
+msgid "Plots"
+msgstr ""
+
+#: ./ui/main/activity_info.py:31
+msgid "Time worked"
+msgstr ""
+
+#: ./ui/main/activity_info.py:32
+msgid "Minutes, hours, days... What you prefer."
+msgstr ""
+
+#: ./ui/main/activity_info.py:43
+msgid "Save entry"
+msgstr ""
+
+#: ./ui/main/activity_info.py:48
+msgid "Choose an activity and set the minutes before saving"
+msgstr ""
+
+#: ./ui/main/activity_info.py:59
+msgid "New entry saved"
+msgstr ""
+
+#: ./ui/main/activity_info.py:66
+msgid "Error saving entry"
+msgstr ""
+
+#: ./ui/main/activity_info.py:80
+msgid "Choose an activity"
+msgstr ""
+
+#: ./ui/main/headerbar.py:14
+msgid "Time Tracker"
+msgstr ""
+
+#: ./ui/main/headerbar.py:15
+msgid "Focus on what matters"
+msgstr ""
+
+#: ./ui/main/headerbar.py:18
+msgid "Open menu"
+msgstr ""
+
+#: ./ui/main/headerbar.py:29
+msgid "Edit CSV file"
+msgstr ""
+
+#: ./ui/main/headerbar.py:30
+msgid "Open Data Analyzer"
+msgstr ""
+
+#: ./ui/main/headerbar.py:33 ./ui/settings/window.py:27
+msgid "Settings"
+msgstr ""
+
+#: ./ui/main/headerbar.py:37
+msgid "About"
+msgstr ""
+
+#: ./ui/settings/window.py:35
+msgid "Use dark theme variant"
+msgstr ""
+
+#: ./ui/settings/window.py:37
+msgid "Activities"
+msgstr ""
+
+#: ./ui/settings/window.py:38
+msgid "Separate the activities with a comma"
+msgstr ""
+
+#: ./ui/settings/window.py:45
+msgid "Data file path"
+msgstr ""
+
+#: ./ui/settings/window.py:46
+msgid "Your activity log is stored here"
+msgstr ""
+

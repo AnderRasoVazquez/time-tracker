@@ -1,0 +1,211 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2018-11-18 00:02+0100\n"
+"PO-Revision-Date: 2018-11-18 00:04+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2018-11-17 23:54+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2018-11-17 23:46+0100\n"
+"PO-Revision-Date: 2018-11-17 23:48+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2018-11-17 23:43+0100\n"
+"PO-Revision-Date: 2018-11-17 23:44+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2018-11-17 23:36+0100\n"
+"PO-Revision-Date: 2018-11-17 23:42+0100\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2018-11-17 23:34+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2018-11-17 23:32+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2018-11-16 07:01+0100\n"
+"PO-Revision-Date: 2018-11-16 07:03+0100\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+
+#: ui/analyzer/window.py:35
+msgid "Data Analyzer"
+msgstr "Analizador de Datos"
+
+#: ui/analyzer/window.py:36
+msgid "Learn everything about your data"
+msgstr "Apréndelo todo sobre tus datos"
+
+#: ui/analyzer/window.py:61
+msgid "Load DataFrame"
+msgstr "Cargar DataFrame"
+
+#: ui/analyzer/window.py:62
+msgid "Help"
+msgstr "Ayuda"
+
+#: ui/analyzer/window.py:65
+msgid "Daily"
+msgstr "Diario"
+
+#: ui/analyzer/window.py:66
+msgid "Weekly"
+msgstr "Semanal"
+
+#: ui/analyzer/window.py:67
+msgid "Monthly"
+msgstr "Mensual"
+
+#: ui/analyzer/window.py:68
+msgid "Yearly"
+msgstr "Anual"
+
+#: ui/analyzer/window.py:71
+msgid "Activity hour count"
+msgstr "Conteo de actividad por horas"
+
+#: ui/analyzer/window.py:72
+msgid "Real VS Expected hour count"
+msgstr "Conteo de horas Reales VS Esperadas"
+
+#: ui/analyzer/window.py:75
+msgid "Heatmap"
+msgstr "Mapa de Calor"
+
+#: ui/analyzer/window.py:76
+msgid "Bars"
+msgstr "Barras"
+
+#: ui/analyzer/window.py:79
+msgid "Show full report"
+msgstr "Mostrar informe completo"
+
+#: ui/analyzer/window.py:82 ui/main/headerbar.py:38
+msgid "Quit"
+msgstr "Salir"
+
+#: ui/analyzer/window.py:85
+msgid "Terminal"
+msgstr "Terminal"
+
+#: ui/analyzer/window.py:86
+msgid "Plots"
+msgstr "Gráficos"
+
+#: ui/main/widgets/forms/activity_info.py:31
+msgid "Time worked"
+msgstr "Tiempo trabajado"
+
+#: ui/main/widgets/forms/activity_info.py:32
+msgid "Minutes, hours, days... What you prefer."
+msgstr "Minutos, horas, días... Lo que prefieras."
+
+#: ui/main/activity_info.py:43
+msgid "Save entry"
+msgstr "Guardar entrada"
+
+#: ui/main/activity_info.py:48
+msgid "Choose an activity and set the minutes before saving"
+msgstr "Antes de guardar selecciona una actividad y pon el tiempo empleado"
+
+#: ui/main/activity_info.py:59
+msgid "New entry saved"
+msgstr "Nueva entrada guardada"
+
+#: ui/main/activity_info.py:66
+msgid "Error saving entry"
+msgstr "Error al guardar entrada"
+
+#: ui/main/activity_info.py:80
+msgid "Choose an activity"
+msgstr "Selecciona una actividad"
+
+#: ui/main/headerbar.py:14
+msgid "Time Tracker"
+msgstr "Time Tracker"
+
+#: ui/main/widgets/header/headerbar.py:20
+msgid "Focus on what matters"
+msgstr "Céntrate en lo que importa"
+
+#: ui/main/widgets/header/headerbar.py:32
+msgid "Open menu"
+msgstr "Abrir menú"
+
+#: ui/main/headerbar.py:29
+msgid "Edit CSV file"
+msgstr "Editar archivo CSV"
+
+#: ui/main/headerbar.py:30
+msgid "Open Data Analyzer"
+msgstr "Abrir Analizador de Datos"
+
+#: ui/main/headerbar.py:33
+msgid "Settings"
+msgstr "Preferencias"
+
+#: ui/main/headerbar.py:37
+msgid "About"
+msgstr "Acerca de"
+
+#: ui/settings/window.py:35
+msgid "Use dark theme variant"
+msgstr "Usar la variante oscura del tema"
+
+#: ui/settings/window.py:37
+msgid "Activities"
+msgstr "Actividades"
+
+#: ui/settings/window.py:38
+msgid "Separate the activities with a comma"
+msgstr "Separa las actividades con una coma"
+
+#: ui/settings/window.py:45
+msgid "Data file path"
+msgstr "Ruta del archivo de datos"
+
+#: ui/settings/window.py:46
+msgid "Your activity log is stored here"
+msgstr "Tu registro de actividades se guarda aquí"
+
+#: prueba.py:4
+msgid "this is a test"
+msgstr "esto es una prueba"

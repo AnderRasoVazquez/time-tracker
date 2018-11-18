@@ -9,11 +9,12 @@ from appconfig import TrackerConfig
 
 
 class SettingsWindow(Gtk.Window):
-    def __init__(self, parent):
+    def __init__(self, parent=None):
         super().__init__()
         self.main_window = parent
         self.set_transient_for(self.main_window)
         self.set_modal(True)
+        self.set_resizable(True)
         self.set_border_width(30)
 
         self._config = TrackerConfig()
@@ -23,7 +24,7 @@ class SettingsWindow(Gtk.Window):
             settings.set_property("gtk-application-prefer-dark-theme", True)
 
         self.hb = Gtk.HeaderBar()
-        self.hb.set_title("Settings")
+        self.hb.set_title(_("Settings"))
         self.hb.set_show_close_button(True)
         self.set_titlebar(self.hb)
 
@@ -31,18 +32,18 @@ class SettingsWindow(Gtk.Window):
         self.grid.set_row_spacing(10)
         self.grid.set_column_spacing(10)
 
-        self.checkbutton_darkmode = Gtk.CheckButton("Use dark theme variant")
+        self.checkbutton_darkmode = Gtk.CheckButton(_("Use dark theme variant"))
         self.checkbutton_darkmode.set_active(self._config.get_darkmode())
-        self.label_activities = Gtk.Label("Activities")
-        self.label_activities.set_tooltip_text("Separate the activities with a comma")
+        self.label_activities = Gtk.Label(_("Activities"))
+        self.label_activities.set_tooltip_text(_("Separate the activities with a comma"))
         self.label_activities.set_xalign(1)
         self.entry_activities = Gtk.Entry()
         self.entry_activities.set_text(", ".join(self._config.get_activities()))
         self.entry_activities.set_hexpand(True)
         self.entry_activities.connect("changed", self._on_entry_activities_changed)
 
-        self.label_csv_path = Gtk.Label("Data file path")
-        self.label_csv_path.set_tooltip_text("Your activity log is stored here")
+        self.label_csv_path = Gtk.Label(_("Data file path"))
+        self.label_csv_path.set_tooltip_text(_("Your activity log is stored here"))
         self.entry_csv_path = Gtk.Entry()
         self.entry_csv_path.set_text(self._config.get_csv_path())
         self.entry_csv_path.connect("changed", self._on_entry_csv_path_changed)
@@ -78,10 +79,3 @@ class SettingsWindow(Gtk.Window):
             settings.set_property("gtk-application-prefer-dark-theme", True)
         else:
             settings.set_property("gtk-application-prefer-dark-theme", False)
-
-
-if __name__ == '__main__':
-    SettingsWindow()
-    Gtk.main()
-
-
