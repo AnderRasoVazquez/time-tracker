@@ -18,9 +18,9 @@ A simple time tracker built with Python3 and love.
 + Pandas
 + Numpy
 + Matplotlib
-+ (Optional) Ipython3: this is for the terminal of the Analyzer window. If doesn't find it in your path it will use `python3` instead.
++ (Optional) Ipython3: this is for the terminal of the Analyzer window. If it doesn't find it in your path it will use `python3` instead.
 
-## How to run
+## How to run Time Tracker
 
 First clone this repository:
 
@@ -34,7 +34,7 @@ From your terminal:
 
 `$ python3 timetracker/__main__.py`
 
-### Method 2 (Linux) Use desktop file
+### Method 2 (Linux) using the desktop file
 
 If you want to add TimeTracker to your applications menu change the `exec` line of the `time-tracker/data/timetracker.desktop` file and copy it to `~/.local/share/applications`.
 
